@@ -60,3 +60,45 @@ yesBtn.addEventListener('click', () => {
 }); 
 
 goBtn.addEventListener('click', () => updateState(currentIndex + 1)); 
+
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const playIcon = document.getElementById('playIcon');
+const pauseIcon = document.getElementById('pauseIcon');
+const progressBar = document.getElementById('progressBar');
+const repeatBtn = document.getElementById('repeatBtn');
+
+playBtn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  } else {
+    audio.pause();
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  }
+});
+
+audio.addEventListener('timeupdate', () => {
+  if (audio.duration) {
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
+  }
+});
+
+progressBar.addEventListener('input', () => {
+  if (audio.duration) {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+  }
+});
+
+audio.addEventListener('ended', () => {
+  playIcon.style.display = 'block';
+  pauseIcon.style.display = 'none';
+  progressBar.value = 0;
+});
+
+repeatBtn.addEventListener('click', () => {
+  audio.loop = !audio.loop;
+  repeatBtn.classList.toggle('active', audio.loop);
+});

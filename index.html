@@ -36,7 +36,63 @@
 
             <button id="goBtn">Go!</button> 
         </section>
-        <section class="state">State Three</section>
+        <section class="state"> 
+            <img class="music-flower-1" src="data/images/flower_1.png" alt="Flower 1">
+
+            <img class="music-paper" src="data/images/paper4.png" alt="Paper 4"> 
+            <div class="player">
+            <img class="cover" src="data/images/paper_rings.jpg" alt="Album Cover">
+
+            <h1 class="title">Paper Rings</h1>
+            <p class="artist">Taylor Swift</p>
+
+            <input type="range" id="progressBar" class="progress-bar" value="0" min="0" max="100" step="0.1">
+
+            <div class="controls">
+                <button class="btn" title="Shuffle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                    <polyline points="21 16 21 21 16 21"></polyline>
+                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                    <line x1="4" y1="4" x2="9" y2="9"></line>
+                  </svg>
+                </button>
+
+                <button class="btn" title="Previous">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                  </svg>
+                </button>
+
+                <button id="playBtn" class="play-btn btn" title="Play/Pause">
+                  <svg id="playIcon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <svg id="pauseIcon" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                  </svg>
+                </button>
+
+                <button class="btn" title="Next">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                  </svg>
+                </button>
+
+                <button id="repeatBtn" class="repeat-btn btn" title="Repeat">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="17 1 21 5 17 9"></polyline>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <polyline points="7 23 3 19 7 15"></polyline>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                  </svg>
+                </button>
+                </div>
+
+                <audio id="audio" src="data/audio/Paper-Rings-Taylor-Swift.mp3"></audio>
+            </div>
+        </section>
     </main>
 
     <button id="nextBtn">></button>
